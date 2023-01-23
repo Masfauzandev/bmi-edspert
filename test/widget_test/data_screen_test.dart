@@ -8,7 +8,7 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   testWidgets("BMI Data Screen Test Widget", (tester) async {
     tester.binding.window.physicalSizeTestValue = Size(1200, 2200);
-    await tester.pumpWidget(const DataScreenTest());
+    await tester.pumpWidget(DataScreenTest());
 
     final findMaleIcon = find.byIcon(Icons.male);
     final findFemaleIcon = find.text("Female");
@@ -18,7 +18,7 @@ void main() {
     expect(findFemaleIcon, findsOneWidget);
     expect(findChecksIcon, findsNWidgets(2));
 
-    final findHitung = find.text("Hitung BMI");
+    final findHitung = find.text("CALCULATION");
     expect(findHitung, findsOneWidget);
     await tester.tap(findHitung);
     await tester.pumpAndSettle(Duration(seconds: 1));
